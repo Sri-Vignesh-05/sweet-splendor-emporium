@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-crimson hover:shadow-lg",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-royal hover:shadow-lg",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -18,11 +18,14 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Crimson CTA - Brand Red
+        crimson: "bg-gradient-crimson text-cream-light font-semibold shadow-crimson hover:shadow-lg hover:scale-105 transform transition-all duration-300 uppercase tracking-wider",
+        crimsonOutline: "border-2 border-crimson bg-transparent text-crimson font-semibold hover:bg-crimson/10 uppercase tracking-wider transition-all duration-300",
         // Hero Variants for CTA
         hero: "bg-gradient-gold text-foreground font-semibold shadow-gold hover:shadow-lg hover:scale-105 transform transition-all duration-300 uppercase tracking-wider",
-        heroOutline: "border-2 border-gold bg-transparent text-gold font-semibold hover:bg-gold/10 uppercase tracking-wider transition-all duration-300",
-        // Premium CTA
-        premium: "bg-gradient-crimson text-primary-foreground font-semibold shadow-crimson hover:shadow-lg hover:scale-105 transform transition-all duration-300 uppercase tracking-wider",
+        heroOutline: "border-2 border-gold bg-transparent text-gold-dark font-semibold hover:bg-gold/10 uppercase tracking-wider transition-all duration-300",
+        // Premium CTA - Royal Blue
+        premium: "bg-gradient-royal text-cream-light font-semibold shadow-royal hover:shadow-lg hover:scale-105 transform transition-all duration-300 uppercase tracking-wider",
         premiumOutline: "border-2 border-primary bg-transparent text-primary font-semibold hover:bg-primary/10 uppercase tracking-wider transition-all duration-300",
         // Gold accent button
         gold: "bg-gold text-foreground font-medium shadow-gold hover:bg-gold-dark hover:shadow-lg transition-all duration-300",
