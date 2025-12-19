@@ -33,9 +33,9 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <span className="text-gold font-medium tracking-widest uppercase text-sm">Testimonials</span>
+
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-            What Our <span className="text-gradient-gold">Customers Say</span>
+            What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark to-gold">Customers</span> Say
           </h2>
           <p className="text-muted-foreground text-lg mt-6">
             Join thousands of happy customers who have experienced our authentic sweets
@@ -87,18 +87,20 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Trust Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { value: "50+", label: "Years of Legacy" },
-            { value: "2M+", label: "Happy Customers" },
-            { value: "100+", label: "Sweet Varieties" },
-            { value: "4.9", label: "Average Rating" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <p className="font-display text-4xl md:text-5xl font-bold text-gradient-gold">{stat.value}</p>
-              <p className="text-muted-foreground mt-2">{stat.label}</p>
-            </div>
-          ))}
+        <div className="mt-16 bg-white/95 backdrop-blur-md rounded-2xl shadow-elegant border border-gold/20 p-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { value: "50+", label: "Years of Legacy" },
+              { value: "2M+", label: "Happy Customers" },
+              { value: "100+", label: "Sweet Varieties" },
+              { value: "4.9", label: "Average Rating" },
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <p className="font-display text-4xl md:text-5xl font-bold text-gradient-gold">{stat.value}</p>
+                <p className="text-muted-foreground mt-2">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

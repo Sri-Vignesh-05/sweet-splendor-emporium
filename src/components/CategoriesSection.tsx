@@ -32,6 +32,15 @@ const categories: Category[] = [
     itemCount: 32,
     href: "#savouries",
   },
+  {
+    id: 3,
+    name: "Gift Boxes",
+    tagline: "Share the Joy",
+    description: "Elegant, customizable gift boxes filled with our finest sweets and savouries, perfect for festivals, weddings, and special celebrations.",
+    image: categorySweets, // Using sweets image as placeholder for now
+    itemCount: 12,
+    href: "#gifts",
+  },
 ];
 
 const CategoryCard = ({ category, index }: { category: Category; index: number }) => {
@@ -110,7 +119,7 @@ const CategoryCard = ({ category, index }: { category: Category; index: number }
 
 const CategoriesSection = () => {
   return (
-    <section id="categories" className="py-24 bg-gradient-cream pattern-kolam relative overflow-hidden">
+    <section id="categories" className="py-12 bg-background pattern-kolam relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-crimson/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
@@ -118,7 +127,7 @@ const CategoriesSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-          <span className="text-gold-dark font-medium tracking-widest uppercase text-sm">Explore Our Collection</span>
+
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
             <span className="underline-crimson">Shop by Category</span>
           </h2>

@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ShoppingBag, Heart, Star, Eye, ArrowRight } from "lucide-react";
+import { ShoppingBag, Heart, Star, Eye, ArrowRight, Plus, Minus } from "lucide-react";
 import productLadoo from "@/assets/product-ladoo.jpg";
 import productMysorePak from "@/assets/product-mysore-pak.jpg";
 import productKajuKatli from "@/assets/product-kaju-katli.jpg";
@@ -8,6 +9,7 @@ import productMurukku from "@/assets/product-murukku.jpg";
 import productPakoda from "@/assets/product-pakoda.jpg";
 import productMixture from "@/assets/product-mixture.jpg";
 import productBarfi from "@/assets/product-barfi.jpg";
+import SectionDivider from "./SectionDivider";
 
 interface Product {
   id: number;
@@ -118,6 +120,11 @@ const products: Product[] = [
 ];
 
 const ProductCard = ({ product }: { product: Product }) => {
+  const [quantity, setQuantity] = useState(1);
+
+  const handleIncrement = () => setQuantity((prev) => prev + 1);
+  const handleDecrement = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+
   return (
     <div className="group relative bg-card card-premium rounded-2xl overflow-hidden hover-lift">
       {/* Image Container */}
@@ -144,31 +151,20 @@ const ProductCard = ({ product }: { product: Product }) => {
         {/* Badges */}
         <div className="absolute top-4 left-4 flex flex-col gap-2">
           {product.badge && (
-            <span className="bg-gradient-gold text-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-gold">
+            <span className="bg-royal-blue text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-white/20">
               {product.badge}
             </span>
           )}
           {product.isNew && (
-            <span className="bg-gradient-crimson text-cream-light text-xs font-bold px-3 py-1.5 rounded-full shadow-crimson">
+            <span className="bg-royal-blue text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-white/20">
               New
             </span>
           )}
           {product.originalPrice && !product.badge && (
-            <span className="bg-gradient-crimson text-cream-light text-xs font-bold px-3 py-1.5 rounded-full shadow-crimson">
+            <span className="bg-royal-blue text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-white/20">
               {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
             </span>
           )}
-        </div>
-        
-        {/* Category Tag */}
-        <div className="absolute bottom-4 left-4">
-          <span className={`text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider ${
-            product.category === "sweets" 
-              ? "bg-gold/90 text-foreground" 
-              : "bg-royal-blue/90 text-cream-light"
-          }`}>
-            {product.category}
-          </span>
         </div>
       </div>
 
@@ -207,20 +203,42 @@ const ProductCard = ({ product }: { product: Product }) => {
         </div>
 
         {/* Price & Action */}
-        <div className="flex items-center justify-between pt-3 border-t border-gold/20">
-          <div className="flex items-baseline gap-2">
-            <span className="font-display text-2xl font-bold text-crimson">
-              ₹{product.price}
-            </span>
-            {product.originalPrice && (
-              <span className="text-sm text-muted-foreground line-through">
-                ₹{product.originalPrice}
+        <div className="space-y-3 pt-3 border-t border-gold/20">
+          <div className="flex items-center justify-between">
+            <div className="flex items-baseline gap-2">
+              <span className="font-display text-2xl font-bold text-crimson">
+                ₹{product.price * quantity}
               </span>
-            )}
+              {product.originalPrice && (
+                <span className="text-sm text-muted-foreground line-through">
+                  ₹{product.originalPrice * quantity}
+                </span>
+              )}
+            </div>
+            
+            {/* Quantity Selector */}
+            <div className="flex items-center border border-gold/30 rounded-full bg-cream-light/50 backdrop-blur-sm">
+              <button 
+                onClick={handleDecrement}
+                className="w-8 h-8 flex items-center justify-center text-foreground hover:bg-gold/10 hover:text-crimson transition-colors rounded-l-full"
+              >
+                <Minus className="w-3.5 h-3.5" />
+              </button>
+              <span className="w-8 text-center text-sm font-semibold text-foreground">
+                {quantity}
+              </span>
+              <button 
+                onClick={handleIncrement}
+                className="w-8 h-8 flex items-center justify-center text-foreground hover:bg-gold/10 hover:text-crimson transition-colors rounded-r-full"
+              >
+                <Plus className="w-3.5 h-3.5" />
+              </button>
+            </div>
           </div>
-          <Button variant="crimson" size="sm" className="gap-2">
+          
+          <Button variant="crimson" className="w-full gap-2 group/btn">
             <ShoppingBag className="w-4 h-4" />
-            Add
+            Add to Cart
           </Button>
         </div>
       </div>
@@ -233,7 +251,7 @@ const ProductCard = ({ product }: { product: Product }) => {
 
 const FeaturedProductsSection = () => {
   return (
-    <section id="products" className="py-24 bg-cream-light pattern-paisley relative overflow-hidden">
+    <section id="products" className="py-12 bg-background pattern-kolam relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-gold/8 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-crimson/5 rounded-full blur-3xl" />
@@ -242,22 +260,16 @@ const FeaturedProductsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-crimson font-medium tracking-widest uppercase text-sm">Curated for You</span>
+
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-            <span className="underline-gold underline-gold-center">Featured Products</span>
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark to-gold">Products</span>
           </h2>
           <p className="text-muted-foreground text-lg mt-8 max-w-2xl mx-auto">
             Discover our most loved sweets and savouries, handpicked from our extensive collection of authentic South Indian delicacies
           </p>
           
           {/* Ornate Divider */}
-          <div className="flex items-center justify-center gap-4 pt-6">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-crimson" />
-            <div className="w-2 h-2 rounded-full bg-gold" />
-            <div className="w-3 h-3 rotate-45 border-2 border-crimson" />
-            <div className="w-2 h-2 rounded-full bg-gold" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-crimson" />
-          </div>
+          <SectionDivider />
         </div>
 
         {/* Products Grid */}

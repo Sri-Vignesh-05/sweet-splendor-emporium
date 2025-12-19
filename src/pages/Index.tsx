@@ -10,12 +10,12 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background pattern-kolam">
       <Header />
       <HeroSection />
+      <FeaturesSection />
       <CategoriesSection />
       <FeaturedProductsSection />
-      <FeaturesSection />
       <SpecialsSection />
       <TestimonialsSection />
       <NewsletterSection />

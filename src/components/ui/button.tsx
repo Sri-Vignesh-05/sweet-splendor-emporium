@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Crimson CTA - Brand Red
-        crimson: "bg-gradient-crimson text-cream-light font-semibold shadow-crimson hover:shadow-lg hover:scale-105 transform transition-all duration-300 uppercase tracking-wider",
+        crimson: "bg-gradient-gold text-primary font-bold shadow-gold hover:shadow-lg hover:scale-105 transform transition-all duration-300 uppercase tracking-wider",
         crimsonOutline: "border-2 border-crimson bg-transparent text-crimson font-semibold hover:bg-crimson/10 uppercase tracking-wider transition-all duration-300",
         // Hero Variants for CTA
         hero: "bg-gradient-gold text-foreground font-semibold shadow-gold hover:shadow-lg hover:scale-105 transform transition-all duration-300 uppercase tracking-wider",

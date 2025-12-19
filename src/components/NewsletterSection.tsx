@@ -47,7 +47,7 @@ const NewsletterSection = () => {
                 required
               />
             </div>
-            <Button type="submit" variant="premium" size="xl" className="group">
+            <Button type="submit" variant="premium" size="xl" className="group text-white">
               Subscribe
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
