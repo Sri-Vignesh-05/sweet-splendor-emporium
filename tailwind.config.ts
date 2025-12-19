@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Cormorant Garamond", "Georgia", "serif"],
+        display: ["Playfair Display", "Georgia", "serif"],
         body: ["Poppins", "system-ui", "sans-serif"],
       },
       colors: {
@@ -61,25 +61,26 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        coral: {
-          DEFAULT: "hsl(var(--coral))",
-          light: "hsl(var(--coral-light))",
+        crimson: {
+          DEFAULT: "hsl(var(--crimson))",
+          light: "hsl(var(--crimson-light))",
+          dark: "hsl(var(--crimson-dark))",
         },
-        crimson: "hsl(var(--crimson))",
-        teal: "hsl(var(--teal))",
+        "royal-blue": {
+          DEFAULT: "hsl(var(--royal-blue))",
+          light: "hsl(var(--royal-blue-light))",
+          dark: "hsl(var(--royal-blue-dark))",
+        },
         cream: {
           DEFAULT: "hsl(var(--cream))",
           light: "hsl(var(--cream-light))",
+          dark: "hsl(var(--cream-dark))",
         },
-        blush: "hsl(var(--blush))",
-        slate: "hsl(var(--slate))",
         gold: {
           DEFAULT: "hsl(var(--gold))",
           light: "hsl(var(--gold-light))",
           dark: "hsl(var(--gold-dark))",
         },
-        rose: "hsl(var(--rose))",
-        "blue-muted": "hsl(var(--blue-muted))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -104,8 +105,12 @@ export default {
           "100%": { transform: "translateX(0)" },
         },
         "pulse-gold": {
-          "0%, 100%": { boxShadow: "0 0 0 0 hsl(43 85% 55% / 0.4)" },
-          "50%": { boxShadow: "0 0 0 10px hsl(43 85% 55% / 0)" },
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(43 85% 50% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 10px hsl(43 85% 50% / 0)" },
+        },
+        "pulse-crimson": {
+          "0%, 100%": { boxShadow: "0 0 0 0 hsl(352 85% 50% / 0.4)" },
+          "50%": { boxShadow: "0 0 0 10px hsl(352 85% 50% / 0)" },
         },
       },
       animation: {
@@ -114,6 +119,7 @@ export default {
         "fade-in": "fade-in 0.5s ease-out forwards",
         "slide-in-right": "slide-in-right 0.3s ease-out",
         "pulse-gold": "pulse-gold 2s ease-in-out infinite",
+        "pulse-crimson": "pulse-crimson 2s ease-in-out infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
