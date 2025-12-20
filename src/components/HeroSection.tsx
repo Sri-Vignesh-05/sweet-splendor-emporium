@@ -8,6 +8,12 @@ const HeroSection = () => {
       {/* Gradient Overlay for pattern readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/50 pointer-events-none" />
 
+      {/* Top-Left Temple Ornament - positioned in corner with spacing from all content */}
+      <div className="ornament-temple-tl hidden lg:block" style={{ top: '100px', left: '20px' }} />
+      
+      {/* Bottom-Right Temple Ornament - positioned in corner with spacing from all content */}
+      <div className="ornament-temple-br hidden lg:block" style={{ bottom: '20px', right: '20px' }} />
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
@@ -17,9 +23,6 @@ const HeroSection = () => {
               <span className="w-2 h-2 rounded-full bg-crimson"></span>
               <span className="text-sm font-semibold text-crimson tracking-wide">South India's Favourite Since 1988</span>
             </div>
-
-            {/* Top-Left Temple Ornament - positioned between badge and "Authentic" */}
-            <div className="ornament-temple-tl hidden lg:block" style={{ top: '48px', left: '-30px' }} />
 
             {/* Heading */}
             <div className="space-y-2 relative">
@@ -51,8 +54,6 @@ const HeroSection = () => {
           <div className="relative isolate">
              {/* Main Plate Image */}
             <div className="relative z-10 mx-auto max-w-[500px] lg:max-w-none">
-               {/* Bottom-Right Temple Ornament - positioned between image and section below */}
-               <div className="ornament-temple-br hidden lg:block" style={{ bottom: '-40px', right: '-10px' }} />
                {/* Golden glow effect behind plate */}
                <div className="absolute inset-0 bg-gold/20 blur-[80px] rounded-full -z-10" />
                
