@@ -121,29 +121,34 @@ const products: Product[] = [
 
 const ProductCard = ({ product }: { product: Product }) => {
   const [quantity, setQuantity] = useState(1);
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleIncrement = () => setQuantity((prev) => prev + 1);
   const handleDecrement = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   return (
-    <div className="group relative bg-card card-premium rounded-2xl overflow-hidden hover-lift">
+    <div 
+      className="group relative bg-card rounded-2xl overflow-hidden hover-lift-premium border border-gold/15 hover:border-gold/40 transition-all duration-500"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {/* Image Container */}
       <div className="relative aspect-square overflow-hidden">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className={`w-full h-full object-cover transition-all duration-700 ${isHovered ? 'scale-110 brightness-105' : 'scale-100'}`}
         />
         
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/30 transition-colors duration-300" />
+        {/* Gradient Overlay */}
+        <div className={`absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
         
         {/* Quick Actions */}
-        <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0">
-          <button className="w-10 h-10 bg-cream-light/95 backdrop-blur-sm rounded-full flex items-center justify-center text-foreground hover:bg-crimson hover:text-cream-light transition-colors shadow-elegant">
+        <div className={`absolute top-4 right-4 flex flex-col gap-2 transition-all duration-300 ${isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
+          <button className="w-11 h-11 bg-white/95 backdrop-blur-md rounded-full flex items-center justify-center text-foreground hover:bg-crimson hover:text-white transition-all duration-300 shadow-lg hover:scale-110">
             <Heart className="w-5 h-5" />
           </button>
-          <button className="w-10 h-10 bg-cream-light/95 backdrop-blur-sm rounded-full flex items-center justify-center text-foreground hover:bg-crimson hover:text-cream-light transition-colors shadow-elegant">
+          <button className="w-11 h-11 bg-white/95 backdrop-blur-md rounded-full flex items-center justify-center text-foreground hover:bg-crimson hover:text-white transition-all duration-300 shadow-lg hover:scale-110">
             <Eye className="w-5 h-5" />
           </button>
         </div>
@@ -151,21 +156,27 @@ const ProductCard = ({ product }: { product: Product }) => {
         {/* Badges */}
         <div className="absolute top-4 left-4 flex flex-col gap-2">
           {product.badge && (
-            <span className="bg-royal-blue text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-white/20">
+            <span className="bg-gradient-to-r from-crimson to-crimson-dark text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg animate-bounce-subtle">
               {product.badge}
             </span>
           )}
           {product.isNew && (
-            <span className="bg-royal-blue text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-white/20">
+            <span className="bg-gradient-to-r from-royal-blue to-royal-blue-light text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
               New
             </span>
           )}
           {product.originalPrice && !product.badge && (
-            <span className="bg-royal-blue text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border border-white/20">
+            <span className="bg-gradient-to-r from-accent-green to-emerald-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
               {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
             </span>
           )}
         </div>
+
+        {/* Quick Add Button - Appears on hover */}
+        <button className={`absolute bottom-4 left-4 right-4 bg-crimson text-white py-3 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-crimson transition-all duration-300 hover:bg-crimson-dark ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <ShoppingBag className="w-5 h-5" />
+          Quick Add
+        </button>
       </div>
 
       {/* Content */}
@@ -179,31 +190,31 @@ const ProductCard = ({ product }: { product: Product }) => {
                 className={`w-4 h-4 ${
                   i < Math.floor(product.rating)
                     ? "text-gold fill-gold"
-                    : "text-muted-foreground"
+                    : "text-muted-foreground/30"
                 }`}
               />
             ))}
           </div>
-          <span className="text-sm font-medium text-gold-dark">
+          <span className="text-sm font-bold text-gold-dark">
             {product.rating}
           </span>
-          <span className="text-sm text-muted-foreground">
-            ({product.reviews} reviews)
+          <span className="text-xs text-muted-foreground">
+            ({product.reviews})
           </span>
         </div>
 
         {/* Title & Description */}
         <div>
-          <h3 className="font-display text-xl font-bold text-foreground group-hover:text-crimson transition-colors">
+          <h3 className="font-display text-xl font-bold text-foreground group-hover:text-crimson transition-colors duration-300">
             {product.name}
           </h3>
-          <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+          <p className="text-sm text-muted-foreground mt-1.5 line-clamp-2 leading-relaxed">
             {product.description}
           </p>
         </div>
 
         {/* Price & Action */}
-        <div className="space-y-3 pt-3 border-t border-gold/20">
+        <div className="space-y-4 pt-4 border-t border-gold/15">
           <div className="flex items-center justify-between">
             <div className="flex items-baseline gap-2">
               <span className="font-display text-2xl font-bold text-crimson">
@@ -217,54 +228,57 @@ const ProductCard = ({ product }: { product: Product }) => {
             </div>
             
             {/* Quantity Selector */}
-            <div className="flex items-center border border-gold/30 rounded-full bg-cream-light/50 backdrop-blur-sm">
+            <div className="flex items-center border-2 border-gold/25 rounded-full bg-background/80 backdrop-blur-sm overflow-hidden">
               <button 
                 onClick={handleDecrement}
-                className="w-8 h-8 flex items-center justify-center text-foreground hover:bg-gold/10 hover:text-crimson transition-colors rounded-l-full"
+                className="w-9 h-9 flex items-center justify-center text-foreground hover:bg-crimson hover:text-white transition-all"
               >
-                <Minus className="w-3.5 h-3.5" />
+                <Minus className="w-4 h-4" />
               </button>
-              <span className="w-8 text-center text-sm font-semibold text-foreground">
+              <span className="w-10 text-center text-sm font-bold text-foreground">
                 {quantity}
               </span>
               <button 
                 onClick={handleIncrement}
-                className="w-8 h-8 flex items-center justify-center text-foreground hover:bg-gold/10 hover:text-crimson transition-colors rounded-r-full"
+                className="w-9 h-9 flex items-center justify-center text-foreground hover:bg-crimson hover:text-white transition-all"
               >
-                <Plus className="w-3.5 h-3.5" />
+                <Plus className="w-4 h-4" />
               </button>
             </div>
           </div>
           
-          <Button variant="crimson" className="w-full gap-2 group/btn">
-            <ShoppingBag className="w-4 h-4" />
+          <Button variant="crimson" className="w-full gap-2 py-6 text-base font-semibold group/btn rounded-xl">
+            <ShoppingBag className="w-5 h-5 group-hover/btn:animate-bounce" />
             Add to Cart
           </Button>
         </div>
       </div>
 
-      {/* Bottom Accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      {/* Bottom Accent Line */}
+      <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-crimson to-gold transition-all duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
     </div>
   );
 };
 
 const FeaturedProductsSection = () => {
   return (
-    <section id="products" className="py-12 bg-background pattern-kolam relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-gold/8 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-crimson/5 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-royal-blue/3 rounded-full blur-3xl" />
+    <section id="products" className="py-20 bg-background pattern-kolam relative overflow-hidden">
+      {/* Enhanced Decorative Elements */}
+      <div className="absolute top-0 left-0 w-80 h-80 bg-gold/10 rounded-full blur-[100px] animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-crimson/8 rounded-full blur-[100px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-royal-blue/5 rounded-full blur-[120px]" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-20 space-y-5">
+          <span className="inline-block text-crimson font-semibold tracking-widest uppercase text-sm bg-crimson/8 px-6 py-2 rounded-full border border-crimson/20">
+            Our Collection
+          </span>
 
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark to-gold">Products</span>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-dark">Products</span>
           </h2>
-          <p className="text-muted-foreground text-lg mt-8 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
             Discover our most loved sweets and savouries, handpicked from our extensive collection of authentic South Indian delicacies
           </p>
           
@@ -274,36 +288,44 @@ const FeaturedProductsSection = () => {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {products.map((product, index) => (
+            <div key={product.id} style={{ animationDelay: `${index * 0.1}s` }} className="animate-fade-up opacity-0" >
+              <ProductCard product={product} />
+            </div>
           ))}
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-16 space-y-6">
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button variant="crimson" size="xl" className="group">
+        <div className="text-center mt-20 space-y-8">
+          <div className="flex flex-wrap items-center justify-center gap-5">
+            <Button variant="crimson" size="xl" className="group px-10 py-7 text-lg rounded-xl shadow-crimson hover:shadow-xl transition-all duration-300">
               View All Products
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </Button>
-            <Button variant="premiumOutline" size="xl">
+            <Button variant="premiumOutline" size="xl" className="px-10 py-7 text-lg rounded-xl">
               Browse Categories
             </Button>
           </div>
           
-          {/* Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-8 pt-8 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span>Free Shipping Above ₹500</span>
+          {/* Enhanced Trust Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-10 pt-10">
+            <div className="flex items-center gap-3 text-muted-foreground group cursor-pointer">
+              <div className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="w-3 h-3 rounded-full bg-gold animate-pulse" />
+              </div>
+              <span className="font-medium">Free Shipping Above ₹500</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span>100% Fresh Guarantee</span>
+            <div className="flex items-center gap-3 text-muted-foreground group cursor-pointer">
+              <div className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="w-3 h-3 rounded-full bg-gold animate-pulse" />
+              </div>
+              <span className="font-medium">100% Fresh Guarantee</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-              <span>Same Day Dispatch</span>
+            <div className="flex items-center gap-3 text-muted-foreground group cursor-pointer">
+              <div className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="w-3 h-3 rounded-full bg-gold animate-pulse" />
+              </div>
+              <span className="font-medium">Same Day Dispatch</span>
             </div>
           </div>
         </div>
