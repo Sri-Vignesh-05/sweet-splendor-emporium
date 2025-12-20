@@ -11,17 +11,18 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left space-y-6 animate-fade-in">
+          <div className="text-center lg:text-left space-y-6 animate-fade-in relative">
             {/* Tag */}
             <div className="inline-flex items-center gap-2 bg-crimson/5 border border-crimson/20 rounded-full px-4 py-1.5 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-crimson"></span>
               <span className="text-sm font-semibold text-crimson tracking-wide">South India's Favourite Since 1988</span>
             </div>
 
+            {/* Top-Left Temple Ornament - positioned between badge and "Authentic" */}
+            <div className="ornament-temple-tl hidden lg:block" style={{ top: '48px', left: '-30px' }} />
+
             {/* Heading */}
             <div className="space-y-2 relative">
-              <div className="ornament-florid-tl hidden lg:block" />
-              <div className="ornament-corner-tr hidden lg:block" />
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1]">
                 Authentic <br />
                 <span className="text-specials-gold text-transparent bg-clip-text bg-gradient-to-r from-gold-dark to-gold">Sweets &</span> <br />
@@ -50,10 +51,8 @@ const HeroSection = () => {
           <div className="relative isolate">
              {/* Main Plate Image */}
             <div className="relative z-10 mx-auto max-w-[500px] lg:max-w-none">
-               <div className="ornament-florid-br hidden lg:block" />
-               <div className="ornament-ring hidden lg:block animate-spin-slow" />
-               <div className="ornament-ring-inner hidden lg:block" />
-               <div className="ornament-corner-bl hidden lg:block" />
+               {/* Bottom-Right Temple Ornament - positioned between image and section below */}
+               <div className="ornament-temple-br hidden lg:block" style={{ bottom: '-40px', right: '-10px' }} />
                {/* Golden glow effect behind plate */}
                <div className="absolute inset-0 bg-gold/20 blur-[80px] rounded-full -z-10" />
                
