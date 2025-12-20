@@ -1,4 +1,5 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 
 const testimonials = [
   {
@@ -28,12 +29,56 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const [activeIndex, setActiveIndex] = useState(1);
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
+  };
+
+  const getCardStyle = (index: number) => {
+    const diff = index - activeIndex;
+    const normalizedDiff = ((diff + testimonials.length) % testimonials.length);
+    
+    // Determine position: 0 = center, 1 = right, 2 (or -1) = left
+    let position = normalizedDiff;
+    if (normalizedDiff === 2) position = -1; // Make it appear on the left
+    
+    if (position === 0) {
+      // Center card - fully visible
+      return {
+        transform: "translateX(0) scale(1) rotateY(0deg)",
+        zIndex: 30,
+        opacity: 1,
+        filter: "blur(0px)",
+      };
+    } else if (position === 1) {
+      // Right card - behind and blurred
+      return {
+        transform: "translateX(60%) scale(0.85) rotateY(-15deg)",
+        zIndex: 20,
+        opacity: 0.6,
+        filter: "blur(3px)",
+      };
+    } else {
+      // Left card - behind and blurred
+      return {
+        transform: "translateX(-60%) scale(0.85) rotateY(15deg)",
+        zIndex: 20,
+        opacity: 0.6,
+        filter: "blur(3px)",
+      };
+    }
+  };
+
   return (
     <section className="py-20 bg-gradient-cream pattern-kolam relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
             What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark to-gold">Customers</span> Say
           </h2>
@@ -48,41 +93,81 @@ const TestimonialsSection = () => {
           </div>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="bg-card rounded-2xl p-8 shadow-card hover-lift border border-gold/10 relative"
-            >
-              {/* Quote Icon */}
-              <div className="absolute -top-4 left-8 w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center shadow-gold">
-                <Quote className="w-5 h-5 text-foreground" />
-              </div>
+        {/* 3D Carousel */}
+        <div className="relative flex items-center justify-center h-[450px] perspective-1000">
+          {/* Navigation Buttons */}
+          <button
+            onClick={handlePrev}
+            className="absolute left-4 md:left-12 z-40 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-elegant border border-gold/20 flex items-center justify-center hover:bg-gold/10 transition-all duration-300 hover:scale-110"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="w-6 h-6 text-crimson" />
+          </button>
+          
+          <button
+            onClick={handleNext}
+            className="absolute right-4 md:right-12 z-40 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-elegant border border-gold/20 flex items-center justify-center hover:bg-gold/10 transition-all duration-300 hover:scale-110"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="w-6 h-6 text-crimson" />
+          </button>
 
-              {/* Rating */}
-              <div className="flex items-center gap-1 mb-4 pt-2">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-gold fill-gold" />
-                ))}
-              </div>
+          {/* Cards Container */}
+          <div className="relative w-full max-w-lg h-full flex items-center justify-center">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={testimonial.id}
+                className="absolute w-full max-w-md transition-all duration-500 ease-out cursor-pointer"
+                style={getCardStyle(index)}
+                onClick={() => setActiveIndex(index)}
+              >
+                <div className="bg-card rounded-2xl p-8 shadow-card border border-gold/20 relative">
+                  {/* Quote Icon */}
+                  <div className="absolute -top-4 left-8 w-10 h-10 bg-gradient-gold rounded-full flex items-center justify-center shadow-gold">
+                    <Quote className="w-5 h-5 text-foreground" />
+                  </div>
 
-              {/* Text */}
-              <p className="text-foreground/80 leading-relaxed mb-6 italic">
-                "{testimonial.text}"
-              </p>
+                  {/* Rating */}
+                  <div className="flex items-center gap-1 mb-4 pt-2">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-gold fill-gold" />
+                    ))}
+                  </div>
 
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-4 border-t border-gold/10">
-                <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-foreground font-semibold shadow-gold">
-                  {testimonial.avatar}
+                  {/* Text */}
+                  <p className="text-foreground/80 leading-relaxed mb-6 italic">
+                    "{testimonial.text}"
+                  </p>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-4 pt-4 border-t border-gold/10">
+                    <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center text-foreground font-semibold shadow-gold">
+                      {testimonial.avatar}
+                    </div>
+                    <div>
+                      <p className="font-display font-semibold text-foreground">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-display font-semibold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-                </div>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dots Indicator */}
+        <div className="flex justify-center gap-3 mt-8">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === activeIndex
+                  ? "bg-crimson w-8"
+                  : "bg-gold/40 hover:bg-gold/60"
+              }`}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
           ))}
         </div>
 
