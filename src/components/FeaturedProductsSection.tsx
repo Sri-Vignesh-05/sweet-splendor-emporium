@@ -10,6 +10,7 @@ import productPakoda from "@/assets/product-pakoda.jpg";
 import productMixture from "@/assets/product-mixture.jpg";
 import productBarfi from "@/assets/product-barfi.jpg";
 import SectionDivider from "./SectionDivider";
+import TraditionalUnderline from "./TraditionalUnderline";
 
 interface Product {
   id: number;
@@ -264,12 +265,13 @@ const FeaturedProductsSection = () => {
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark to-gold">Products</span>
           </h2>
-          <p className="text-muted-foreground text-lg mt-8 max-w-2xl mx-auto">
+          
+          {/* Traditional Decorative underline */}
+          <TraditionalUnderline size="lg" className="pt-4" />
+          
+          <p className="text-muted-foreground text-lg mt-6 max-w-2xl mx-auto">
             Discover our most loved sweets and savouries, handpicked from our extensive collection of authentic South Indian delicacies
           </p>
-          
-          {/* Ornate Divider */}
-          <SectionDivider />
         </div>
 
         {/* Products Grid */}

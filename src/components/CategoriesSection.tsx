@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import categorySweets from "@/assets/category-sweets.jpg";
 import categorySavouries from "@/assets/category-savouries.jpg";
+import TraditionalUnderline from "./TraditionalUnderline";
 
 interface Category {
   id: number;
@@ -129,20 +130,15 @@ const CategoriesSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
 
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-            <span className="underline-crimson">Shop by Category</span>
+            Shop by Category
           </h2>
-          <p className="text-muted-foreground text-lg mt-8 max-w-2xl mx-auto">
+          
+          {/* Traditional Decorative underline */}
+          <TraditionalUnderline size="lg" className="pt-4" />
+          
+          <p className="text-muted-foreground text-lg mt-6 max-w-2xl mx-auto">
             From melt-in-your-mouth sweets to perfectly crispy savouries, discover the authentic taste of South India
           </p>
-          
-          {/* Ornate Divider */}
-          <div className="flex items-center justify-center gap-4 pt-6">
-            <div className="h-px w-20 bg-gradient-to-r from-transparent to-gold" />
-            <div className="w-3 h-3 rotate-45 bg-crimson" />
-            <div className="w-4 h-4 rounded-full border-2 border-gold" />
-            <div className="w-3 h-3 rotate-45 bg-crimson" />
-            <div className="h-px w-20 bg-gradient-to-l from-transparent to-gold" />
-          </div>
         </div>
 
         {/* Categories */}
