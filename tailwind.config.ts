@@ -81,6 +81,13 @@ export default {
           light: "hsl(var(--gold-light))",
           dark: "hsl(var(--gold-dark))",
         },
+        saffron: {
+          DEFAULT: "hsl(var(--saffron))",
+        },
+        temple: {
+          bronze: "hsl(var(--temple-bronze))",
+          copper: "hsl(var(--temple-copper))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
