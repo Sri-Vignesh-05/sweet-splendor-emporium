@@ -16,9 +16,9 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      {/* Top Red Bar */}
-      <div className="bg-crimson text-white py-2 px-4 shadow-sm">
-        <div className="container mx-auto flex justify-between items-center text-xs md:text-sm font-medium">
+      {/* Top Temple-style Red Bar */}
+      <div className="bg-gradient-to-r from-crimson-dark via-crimson to-crimson-dark text-white py-2.5 px-4 shadow-crimson">
+        <div className="container mx-auto flex justify-between items-center text-xs md:text-sm font-semibold">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4" />
@@ -34,20 +34,24 @@ const Header = () => {
             <span>Free Delivery ₹500+</span>
           </div>
         </div>
+        {/* Decorative bottom border */}
+        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
       </div>
 
-      {/* Main Header */}
-      <header className="sticky top-0 bg-background/70 backdrop-blur-md border-b border-gold/20 shadow-sm transition-all duration-300">
+      {/* Main Header with Grand Styling */}
+      <header className="sticky top-0 bg-background/85 backdrop-blur-lg border-b-2 border-gold/30 shadow-elegant transition-all duration-300">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+          <div className="flex items-center justify-between h-22">
+            {/* Logo with enhanced styling */}
             <div className="flex items-center">
-              <a href="#" className="flex items-center group">
+              <a href="#" className="flex items-center group relative">
                 <img 
                   src={logo} 
                   alt="Adyar Ananda Bhavan - Sweets & Snacks" 
-                  className="h-14 md:h-16 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
+                  className="h-16 md:h-18 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
                 />
+                {/* Logo glow on hover */}
+                <div className="absolute inset-0 bg-gold/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
               </a>
             </div>
 
