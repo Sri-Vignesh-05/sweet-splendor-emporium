@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-sweets.jpg";
+import TraditionalUnderline from "./TraditionalUnderline";
 
 const HeroSection = () => {
   return (
@@ -41,12 +42,8 @@ const HeroSection = () => {
                 <span className="block text-crimson">Savouries</span>
               </h1>
               
-              {/* Decorative underline */}
-              <div className="flex items-center gap-2 justify-center lg:justify-start pt-2">
-                <div className="h-1 w-16 bg-gradient-gold rounded-full" />
-                <div className="w-3 h-3 rotate-45 bg-crimson" />
-                <div className="h-1 w-8 bg-gold/50 rounded-full" />
-              </div>
+              {/* Traditional Decorative underline */}
+              <TraditionalUnderline size="lg" className="justify-center lg:justify-start pt-4" />
             </div>
 
             {/* Description with refined typography */}

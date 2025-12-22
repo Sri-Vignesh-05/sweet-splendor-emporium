@@ -1,5 +1,6 @@
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import TraditionalUnderline from "./TraditionalUnderline";
 
 const testimonials = [
   {
@@ -82,15 +83,13 @@ const TestimonialsSection = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
             What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-dark to-gold">Customers</span> Say
           </h2>
+          
+          {/* Traditional Decorative underline */}
+          <TraditionalUnderline size="lg" className="pt-4" />
+          
           <p className="text-muted-foreground text-lg mt-6">
             Join thousands of happy customers who have experienced our authentic sweets
           </p>
-          {/* Ornate Divider */}
-          <div className="flex items-center justify-center gap-4 pt-4">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-gold" />
-            <div className="w-3 h-3 rounded-full bg-gold" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-gold" />
-          </div>
         </div>
 
         {/* 3D Carousel */}

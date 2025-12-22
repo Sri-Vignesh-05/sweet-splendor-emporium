@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import TraditionalUnderline from "./TraditionalUnderline";
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState("");
@@ -28,9 +29,13 @@ const NewsletterSection = () => {
           </div>
 
           {/* Content */}
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
             Get <span className="text-gradient-gold">15% Off</span> Your First Order
           </h2>
+          
+          {/* Traditional Decorative underline */}
+          <TraditionalUnderline size="md" className="pt-2 pb-4" />
+          
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
             Subscribe to our newsletter for exclusive deals, festive specials, and new product launches delivered to your inbox.
           </p>
