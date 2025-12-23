@@ -1,4 +1,4 @@
-import decorativeUnderline from "@/assets/decorative-underline.avif";
+import decorativeUnderline from "@/assets/decorative-underline-transparent.png";
 
 interface TraditionalUnderlineProps {
   className?: string;
@@ -7,9 +7,9 @@ interface TraditionalUnderlineProps {
 
 const TraditionalUnderline = ({ className = "", size = "md" }: TraditionalUnderlineProps) => {
   const sizeClasses = {
-    sm: "w-40 h-6",
-    md: "w-56 h-8",
-    lg: "w-72 h-10",
+    sm: "w-56 h-8",
+    md: "w-80 h-10",
+    lg: "w-96 h-12",
   };
 
   return (
