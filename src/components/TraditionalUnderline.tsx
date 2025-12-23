@@ -7,9 +7,9 @@ interface TraditionalUnderlineProps {
 
 const TraditionalUnderline = ({ className = "", size = "md" }: TraditionalUnderlineProps) => {
   const sizeClasses = {
-    sm: "w-56 h-8",
-    md: "w-80 h-10",
-    lg: "w-96 h-12",
+    sm: "w-72 h-8",
+    md: "w-[400px] h-12",
+    lg: "w-[500px] h-14",
   };
 
   return (
@@ -17,10 +17,7 @@ const TraditionalUnderline = ({ className = "", size = "md" }: TraditionalUnderl
       <img
         src={decorativeUnderline}
         alt=""
-        className={`${sizeClasses[size]} object-contain opacity-80`}
-        style={{
-          filter: "sepia(100%) saturate(300%) brightness(90%) hue-rotate(10deg)",
-        }}
+        className={`${sizeClasses[size]} object-contain`}
         aria-hidden="true"
       />
     </div>
