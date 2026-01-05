@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
       {/* Top Temple-style Red Bar */}
-      <div className="bg-gradient-to-r from-crimson-dark via-crimson to-crimson-dark text-white py-2.5 px-4 shadow-crimson">
+      <div className="bg-gradient-to-r from-crimson-dark via-crimson to-crimson-dark text-white py-2.5 px-4 shadow-crimson relative">
         <div className="container mx-auto flex justify-between items-center text-xs md:text-sm font-semibold">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
@@ -35,11 +35,11 @@ const Header = () => {
           </div>
         </div>
         {/* Decorative bottom border */}
-        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-dark/50 via-gold to-gold-dark/50" />
       </div>
 
       {/* Main Header with Grand Styling */}
-      <header className="sticky top-0 bg-background/85 backdrop-blur-lg border-b-2 border-gold/30 shadow-elegant transition-all duration-300">
+      <header className="sticky top-0 bg-cream/95 backdrop-blur-lg border-b-2 border-gold/50 shadow-elegant transition-all duration-300">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-22">
             {/* Logo with enhanced styling */}
@@ -51,7 +51,7 @@ const Header = () => {
                   className="h-16 md:h-18 w-auto object-contain transform group-hover:scale-105 transition-transform duration-300"
                 />
                 {/* Logo glow on hover */}
-                <div className="absolute inset-0 bg-gold/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+                <div className="absolute inset-0 bg-gold/25 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
               </a>
             </div>
 
@@ -96,7 +96,7 @@ const Header = () => {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="lg:hidden py-6 border-t border-crimson/20 animate-fade-in bg-cream-light">
+            <div className="lg:hidden py-6 border-t-2 border-gold/30 animate-fade-in bg-cream">
               <nav className="flex flex-col gap-4">
                 {navLinks.map((link) => (
                   <a

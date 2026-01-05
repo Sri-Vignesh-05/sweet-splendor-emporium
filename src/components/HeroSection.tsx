@@ -5,12 +5,12 @@ import TraditionalUnderline from "./TraditionalUnderline";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden bg-background pattern-kolam">
+    <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden bg-cream-light pattern-kolam">
       {/* Grand Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/40 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-cream-light via-cream-light/95 to-cream-light/50 pointer-events-none" />
       
       {/* Temple-style top border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-gold" />
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-gold" />
 
       {/* Top-Left Temple Ornament */}
       <div className="ornament-temple-tl hidden lg:block" style={{ top: '120px', left: '30px' }} />
@@ -18,24 +18,25 @@ const HeroSection = () => {
       {/* Bottom-Right Temple Ornament */}
       <div className="ornament-temple-br hidden lg:block" style={{ bottom: '30px', right: '30px' }} />
 
-      {/* Decorative corner accents */}
-      <div className="absolute top-32 right-20 w-32 h-32 bg-gold/10 rounded-full blur-3xl hidden lg:block" />
-      <div className="absolute bottom-20 left-20 w-40 h-40 bg-crimson/8 rounded-full blur-3xl hidden lg:block" />
+      {/* Enhanced decorative corner accents */}
+      <div className="absolute top-32 right-20 w-48 h-48 bg-gold/20 rounded-full blur-[100px] hidden lg:block" />
+      <div className="absolute bottom-20 left-20 w-56 h-56 bg-saffron/15 rounded-full blur-[100px] hidden lg:block" />
+      <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-crimson/10 rounded-full blur-[80px] hidden lg:block" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Content */}
           <div className="text-center lg:text-left space-y-8 animate-fade-in relative">
             {/* Premium Tag with temple styling */}
-            <div className="inline-flex items-center gap-3 bg-crimson/8 border-2 border-crimson/30 rounded-full px-5 py-2 shadow-sm backdrop-blur-sm">
+            <div className="inline-flex items-center gap-3 bg-crimson/10 border-2 border-crimson/40 rounded-full px-6 py-2.5 shadow-sm backdrop-blur-sm">
               <span className="w-2.5 h-2.5 rounded-full bg-crimson animate-pulse"></span>
               <span className="text-sm font-bold text-crimson tracking-wider uppercase">South India's Favourite Since 1988</span>
             </div>
 
             {/* Grand Heading with ornate styling */}
             <div className="space-y-3 relative">
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground leading-[1.05] text-ornate">
-                <span className="block">Authentic</span>
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] text-ornate">
+                <span className="block text-royal-blue">Authentic</span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-dark">
                   Sweets &
                 </span>
@@ -53,13 +54,13 @@ const HeroSection = () => {
 
             {/* Grand CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-              <Button variant="premium" className="px-10 py-7 text-lg rounded-xl shadow-royal transition-all hover:scale-105 text-white relative overflow-hidden group">
-                <span className="relative z-10 flex items-center">
+              <Button variant="premium" className="px-10 py-7 text-lg rounded-xl shadow-crimson transition-all hover:scale-105 text-white relative overflow-hidden group border-2 border-crimson-dark/30">
+                <span className="relative z-10 flex items-center font-bold">
                   Shop Now
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
-              <Button variant="outline" className="border-3 border-gold text-gold-dark hover:bg-gold/15 px-10 py-7 text-lg rounded-xl font-bold transition-all hover:border-gold-dark">
+              <Button variant="outline" className="border-3 border-royal-blue text-royal-blue hover:bg-royal-blue hover:text-white px-10 py-7 text-lg rounded-xl font-bold transition-all">
                 View Categories
               </Button>
             </div>
