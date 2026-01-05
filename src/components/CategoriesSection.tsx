@@ -124,6 +124,70 @@ const CategoriesSection = () => {
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-crimson/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
+      
+      {/* Golden Ornamental Corners */}
+      <div className="absolute top-0 left-0 w-32 h-32 md:w-48 md:h-48 pointer-events-none">
+        <svg viewBox="0 0 100 100" className="w-full h-full opacity-60">
+          <defs>
+            <linearGradient id="catCornerGold1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(42 95% 52%)" />
+              <stop offset="50%" stopColor="hsl(38 90% 45%)" />
+              <stop offset="100%" stopColor="hsl(42 95% 52%)" />
+            </linearGradient>
+          </defs>
+          <path d="M0 0 L40 0 C35 5 30 10 25 20 C20 30 15 35 0 40 Z" fill="url(#catCornerGold1)" />
+          <path d="M0 0 L30 0 C25 3 22 8 18 15 C14 22 10 27 0 30 Z" fill="none" stroke="hsl(42 95% 52%)" strokeWidth="0.5" />
+          <circle cx="12" cy="12" r="2" fill="hsl(42 95% 52%)" />
+          <circle cx="8" cy="20" r="1.5" fill="hsl(38 90% 45%)" />
+          <circle cx="20" cy="8" r="1.5" fill="hsl(38 90% 45%)" />
+          <path d="M5 5 Q15 10 10 20" fill="none" stroke="hsl(42 95% 52%)" strokeWidth="0.5" opacity="0.6" />
+        </svg>
+      </div>
+      
+      <div className="absolute top-0 right-0 w-32 h-32 md:w-48 md:h-48 pointer-events-none">
+        <svg viewBox="0 0 100 100" className="w-full h-full opacity-60 transform scale-x-[-1]">
+          <defs>
+            <linearGradient id="catCornerGold2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(42 95% 52%)" />
+              <stop offset="50%" stopColor="hsl(38 90% 45%)" />
+              <stop offset="100%" stopColor="hsl(42 95% 52%)" />
+            </linearGradient>
+          </defs>
+          <path d="M0 0 L40 0 C35 5 30 10 25 20 C20 30 15 35 0 40 Z" fill="url(#catCornerGold2)" />
+          <path d="M0 0 L30 0 C25 3 22 8 18 15 C14 22 10 27 0 30 Z" fill="none" stroke="hsl(42 95% 52%)" strokeWidth="0.5" />
+          <circle cx="12" cy="12" r="2" fill="hsl(42 95% 52%)" />
+          <circle cx="8" cy="20" r="1.5" fill="hsl(38 90% 45%)" />
+          <circle cx="20" cy="8" r="1.5" fill="hsl(38 90% 45%)" />
+        </svg>
+      </div>
+      
+      <div className="absolute bottom-0 left-0 w-32 h-32 md:w-48 md:h-48 pointer-events-none">
+        <svg viewBox="0 0 100 100" className="w-full h-full opacity-60 transform scale-y-[-1]">
+          <defs>
+            <linearGradient id="catCornerGold3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(42 95% 52%)" />
+              <stop offset="50%" stopColor="hsl(38 90% 45%)" />
+              <stop offset="100%" stopColor="hsl(42 95% 52%)" />
+            </linearGradient>
+          </defs>
+          <path d="M0 0 L40 0 C35 5 30 10 25 20 C20 30 15 35 0 40 Z" fill="url(#catCornerGold3)" />
+          <circle cx="12" cy="12" r="2" fill="hsl(42 95% 52%)" />
+        </svg>
+      </div>
+      
+      <div className="absolute bottom-0 right-0 w-32 h-32 md:w-48 md:h-48 pointer-events-none">
+        <svg viewBox="0 0 100 100" className="w-full h-full opacity-60 transform scale-[-1]">
+          <defs>
+            <linearGradient id="catCornerGold4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(42 95% 52%)" />
+              <stop offset="50%" stopColor="hsl(38 90% 45%)" />
+              <stop offset="100%" stopColor="hsl(42 95% 52%)" />
+            </linearGradient>
+          </defs>
+          <path d="M0 0 L40 0 C35 5 30 10 25 20 C20 30 15 35 0 40 Z" fill="url(#catCornerGold4)" />
+          <circle cx="12" cy="12" r="2" fill="hsl(42 95% 52%)" />
+        </svg>
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}

@@ -77,6 +77,66 @@ const TestimonialsSection = () => {
 
   return (
     <section className="py-20 bg-gradient-cream pattern-kolam relative overflow-hidden">
+      {/* Golden Ornamental Corners */}
+      <div className="absolute top-0 left-0 w-28 h-28 md:w-40 md:h-40 pointer-events-none">
+        <svg viewBox="0 0 100 100" className="w-full h-full opacity-50">
+          <defs>
+            <linearGradient id="testCornerGold1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(42 95% 52%)" />
+              <stop offset="50%" stopColor="hsl(38 90% 45%)" />
+              <stop offset="100%" stopColor="hsl(42 95% 52%)" />
+            </linearGradient>
+          </defs>
+          <path d="M0 0 L35 0 C30 4 26 9 22 17 C18 25 13 30 0 35 Z" fill="url(#testCornerGold1)" />
+          <circle cx="10" cy="10" r="2" fill="hsl(42 95% 52%)" />
+          <circle cx="6" cy="17" r="1.2" fill="hsl(38 90% 45%)" />
+          <circle cx="17" cy="6" r="1.2" fill="hsl(38 90% 45%)" />
+        </svg>
+      </div>
+      
+      <div className="absolute top-0 right-0 w-28 h-28 md:w-40 md:h-40 pointer-events-none">
+        <svg viewBox="0 0 100 100" className="w-full h-full opacity-50 transform scale-x-[-1]">
+          <defs>
+            <linearGradient id="testCornerGold2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(42 95% 52%)" />
+              <stop offset="50%" stopColor="hsl(38 90% 45%)" />
+              <stop offset="100%" stopColor="hsl(42 95% 52%)" />
+            </linearGradient>
+          </defs>
+          <path d="M0 0 L35 0 C30 4 26 9 22 17 C18 25 13 30 0 35 Z" fill="url(#testCornerGold2)" />
+          <circle cx="10" cy="10" r="2" fill="hsl(42 95% 52%)" />
+          <circle cx="6" cy="17" r="1.2" fill="hsl(38 90% 45%)" />
+          <circle cx="17" cy="6" r="1.2" fill="hsl(38 90% 45%)" />
+        </svg>
+      </div>
+      
+      <div className="absolute bottom-0 left-0 w-28 h-28 md:w-40 md:h-40 pointer-events-none">
+        <svg viewBox="0 0 100 100" className="w-full h-full opacity-50 transform scale-y-[-1]">
+          <defs>
+            <linearGradient id="testCornerGold3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(42 95% 52%)" />
+              <stop offset="50%" stopColor="hsl(38 90% 45%)" />
+              <stop offset="100%" stopColor="hsl(42 95% 52%)" />
+            </linearGradient>
+          </defs>
+          <path d="M0 0 L35 0 C30 4 26 9 22 17 C18 25 13 30 0 35 Z" fill="url(#testCornerGold3)" />
+          <circle cx="10" cy="10" r="2" fill="hsl(42 95% 52%)" />
+        </svg>
+      </div>
+      
+      <div className="absolute bottom-0 right-0 w-28 h-28 md:w-40 md:h-40 pointer-events-none">
+        <svg viewBox="0 0 100 100" className="w-full h-full opacity-50 transform scale-[-1]">
+          <defs>
+            <linearGradient id="testCornerGold4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(42 95% 52%)" />
+              <stop offset="50%" stopColor="hsl(38 90% 45%)" />
+              <stop offset="100%" stopColor="hsl(42 95% 52%)" />
+            </linearGradient>
+          </defs>
+          <path d="M0 0 L35 0 C30 4 26 9 22 17 C18 25 13 30 0 35 Z" fill="url(#testCornerGold4)" />
+          <circle cx="10" cy="10" r="2" fill="hsl(42 95% 52%)" />
+        </svg>
+      </div>
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
