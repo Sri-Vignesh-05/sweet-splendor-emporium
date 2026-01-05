@@ -6,88 +6,88 @@
 
 @layer base {
   :root {
-    /* Brand Colors - Grand South Indian Temple Aesthetic */
-    --background: 40 35% 95%;
-    --foreground: 25 40% 15%;
+    /* Brand Colors - Rich South Indian Temple Aesthetic (Inspired by reference) */
+    --background: 48 100% 97%;
+    --foreground: 20 50% 12%;
 
-    --card: 38 40% 93%;
-    --card-foreground: 25 40% 15%;
+    --card: 45 80% 95%;
+    --card-foreground: 20 50% 12%;
 
-    --popover: 40 35% 95%;
-    --popover-foreground: 25 40% 15%;
+    --popover: 48 100% 97%;
+    --popover-foreground: 20 50% 12%;
 
     /* Deep Temple Maroon - Primary */
-    --primary: 350 75% 28%;
-    --primary-foreground: 45 50% 95%;
+    --primary: 352 85% 45%;
+    --primary-foreground: 48 100% 97%;
 
     /* Antique Gold - Secondary */
-    --secondary: 40 60% 75%;
-    --secondary-foreground: 25 40% 15%;
+    --secondary: 42 75% 80%;
+    --secondary-foreground: 20 50% 12%;
 
     /* Temple Stone Muted */
-    --muted: 38 30% 85%;
-    --muted-foreground: 25 25% 35%;
+    --muted: 42 50% 88%;
+    --muted-foreground: 20 30% 40%;
 
     /* Burnished Gold - Accent */
-    --accent: 42 90% 48%;
-    --accent-foreground: 25 50% 12%;
+    --accent: 42 95% 52%;
+    --accent-foreground: 20 60% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 45% 70%;
-    --input: 40 40% 82%;
-    --ring: 42 90% 48%;
+    --border: 42 60% 75%;
+    --input: 42 50% 85%;
+    --ring: 42 95% 52%;
 
     --radius: 0.5rem;
 
-    /* Custom Brand Colors - Rich South Indian Temple Palette */
-    --crimson: 352 100% 38%; /* Deep temple red */
-    --crimson-light: 352 70% 85%;
-    --crimson-dark: 352 80% 28%;
-    --royal-blue: 210 45% 50%;
-    --royal-blue-light: 210 30% 78%;
-    --cream: 45 85% 88%;
-    --cream-light: 45 80% 94%;
-    --cream-dark: 42 50% 78%;
-    --gold: 42 95% 58%;
-    --gold-light: 45 90% 75%;
-    --gold-dark: 38 85% 35%;
-    --accent-red: 352 75% 65%;
-    --accent-green: 158 50% 28%;
-    --temple-bronze: 32 60% 40%;
-    --temple-copper: 25 65% 45%;
-    --saffron: 28 95% 55%;
+    /* Custom Brand Colors - Richer South Indian Palette */
+    --crimson: 352 85% 45%;
+    --crimson-light: 352 60% 88%;
+    --crimson-dark: 352 90% 32%;
+    --royal-blue: 220 55% 42%;
+    --royal-blue-light: 220 40% 75%;
+    --cream: 48 100% 93%;
+    --cream-light: 48 100% 97%;
+    --cream-dark: 45 70% 82%;
+    --gold: 42 95% 52%;
+    --gold-light: 45 95% 72%;
+    --gold-dark: 38 90% 38%;
+    --accent-red: 352 70% 58%;
+    --accent-green: 158 55% 32%;
+    --temple-bronze: 32 65% 42%;
+    --temple-copper: 25 70% 48%;
+    --saffron: 28 98% 52%;
 
-    /* Grand Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(38 85% 35%) 0%, hsl(42 95% 58%) 30%, hsl(45 90% 75%) 50%, hsl(42 95% 58%) 70%, hsl(38 85% 35%) 100%);
-    --gradient-gold-shimmer: linear-gradient(135deg, hsl(42 95% 58%) 0%, hsl(45 90% 75%) 25%, hsl(42 95% 58%) 50%, hsl(45 90% 75%) 75%, hsl(42 95% 58%) 100%);
-    --gradient-crimson: linear-gradient(135deg, hsl(352 100% 28%) 0%, hsl(352 100% 38%) 50%, hsl(352 80% 45%) 100%);
-    --gradient-royal: linear-gradient(135deg, hsl(350 75% 22%) 0%, hsl(350 75% 28%) 50%, hsl(350 70% 35%) 100%);
-    --gradient-cream: linear-gradient(180deg, hsl(45 80% 94%) 0%, hsl(40 60% 88%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(40 35% 95%) 0%, hsl(42 50% 90%) 50%, hsl(38 40% 92%) 100%);
-    --gradient-premium: linear-gradient(135deg, hsl(352 100% 28%) 0%, hsl(352 100% 38%) 50%, hsl(352 85% 45%) 100%);
-    --gradient-temple: linear-gradient(180deg, hsl(40 35% 95%) 0%, hsl(42 45% 88%) 30%, hsl(40 35% 95%) 60%, hsl(42 45% 88%) 100%);
-    --gradient-bronze: linear-gradient(135deg, hsl(32 60% 30%) 0%, hsl(32 60% 40%) 50%, hsl(32 55% 50%) 100%);
+    /* Richer Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(38 90% 38%) 0%, hsl(42 95% 52%) 30%, hsl(45 95% 72%) 50%, hsl(42 95% 52%) 70%, hsl(38 90% 38%) 100%);
+    --gradient-gold-shimmer: linear-gradient(135deg, hsl(42 95% 52%) 0%, hsl(45 95% 72%) 25%, hsl(42 95% 52%) 50%, hsl(45 95% 72%) 75%, hsl(42 95% 52%) 100%);
+    --gradient-crimson: linear-gradient(135deg, hsl(352 90% 32%) 0%, hsl(352 85% 45%) 50%, hsl(352 75% 52%) 100%);
+    --gradient-royal: linear-gradient(135deg, hsl(352 90% 28%) 0%, hsl(352 85% 38%) 50%, hsl(352 80% 45%) 100%);
+    --gradient-cream: linear-gradient(180deg, hsl(48 100% 97%) 0%, hsl(45 85% 90%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(48 100% 97%) 0%, hsl(45 90% 93%) 50%, hsl(48 100% 97%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(352 90% 32%) 0%, hsl(352 85% 45%) 50%, hsl(352 80% 50%) 100%);
+    --gradient-temple: linear-gradient(180deg, hsl(48 100% 97%) 0%, hsl(45 85% 90%) 30%, hsl(48 100% 97%) 60%, hsl(45 85% 90%) 100%);
+    --gradient-bronze: linear-gradient(135deg, hsl(32 65% 32%) 0%, hsl(32 65% 42%) 50%, hsl(32 60% 52%) 100%);
 
     /* Richer Shadows */
-    --shadow-gold: 0 8px 32px -6px hsl(42 90% 48% / 0.6);
-    --shadow-gold-intense: 0 12px 48px -8px hsl(42 90% 48% / 0.7);
-    --shadow-crimson: 0 8px 32px -6px hsl(352 100% 38% / 0.5);
-    --shadow-royal: 0 8px 32px -6px hsl(350 75% 28% / 0.4);
-    --shadow-elegant: 0 16px 64px -16px hsl(25 40% 15% / 0.25);
-    --shadow-card: 0 8px 40px -10px hsl(25 40% 15% / 0.15);
-    --shadow-temple: 0 4px 20px -4px hsl(32 60% 40% / 0.4);
+    --shadow-gold: 0 10px 40px -8px hsl(42 95% 48% / 0.55);
+    --shadow-gold-intense: 0 15px 60px -10px hsl(42 95% 48% / 0.65);
+    --shadow-crimson: 0 10px 40px -8px hsl(352 85% 45% / 0.45);
+    --shadow-royal: 0 10px 40px -8px hsl(352 85% 38% / 0.35);
+    --shadow-elegant: 0 20px 80px -20px hsl(20 50% 12% / 0.22);
+    --shadow-card: 0 10px 50px -12px hsl(20 50% 12% / 0.12);
+    --shadow-temple: 0 6px 24px -6px hsl(32 65% 42% / 0.35);
 
     /* Sidebar */
-    --sidebar-background: 40 50% 90%;
-    --sidebar-foreground: 25 40% 15%;
-    --sidebar-primary: 352 100% 38%;
-    --sidebar-primary-foreground: 45 50% 95%;
-    --sidebar-accent: 42 90% 48%;
-    --sidebar-accent-foreground: 25 40% 15%;
-    --sidebar-border: 40 45% 70%;
-    --sidebar-ring: 42 90% 48%;
+    --sidebar-background: 45 80% 92%;
+    --sidebar-foreground: 20 50% 12%;
+    --sidebar-primary: 352 85% 45%;
+    --sidebar-primary-foreground: 48 100% 97%;
+    --sidebar-accent: 42 95% 52%;
+    --sidebar-accent-foreground: 20 50% 12%;
+    --sidebar-border: 42 60% 75%;
+    --sidebar-ring: 42 95% 52%;
   }
 
   .dark {
@@ -212,9 +212,13 @@
 
   /* South Indian Dense Floral Mandala (Temple Carving / Saree Jacquard Style) */
   .pattern-kolam {
-    background-color: #fffdf5;
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50 C 60 30, 90 30, 90 50 C 90 70, 60 70, 50 50 M50 50 C 40 30, 10 30, 10 50 C 10 70, 40 70, 50 50 M50 50 C 30 40, 30 10, 50 10 C 70 10, 70 40, 50 50 M50 50 C 30 60, 30 90, 50 90 C 70 90, 70 60, 50 50' fill='none' stroke='%23f2d284' stroke-width='1.2' opacity='0.2'/%3E%3Cpath d='M0 0 Q 25 25 50 0 Q 75 25 100 0 M0 100 Q 25 75 50 100 Q 75 75 100 100 M0 0 Q 25 25 0 50 Q 25 75 0 100 M100 0 Q 75 25 100 50 Q 75 75 100 100' fill='none' stroke='%23f2d284' stroke-width='0.8' opacity='0.15'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%23faf0b9' opacity='0.25'/%3E%3Ccircle cx='50' cy='50' r='8' fill='%23f2d284' opacity='0.2'/%3E%3Cpath d='M25 25 Q 50 50 25 75 M75 25 Q 50 50 75 75' fill='none' stroke='%23f2d284' stroke-width='1' opacity='0.2'/%3E%3Cpath d='M10 10 L 20 20 M 80 80 L 90 90 M 10 90 L 20 80 M 90 10 L 80 20' stroke='%23f2d284' stroke-width='1.5' opacity='0.15' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-size: 60px 60px;
+    background-color: hsl(48 100% 97%);
+    background-image: 
+      /* Subtle floral pattern */
+      url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 40 C 48 25, 70 25, 70 40 C 70 55, 48 55, 40 40 M40 40 C 32 25, 10 25, 10 40 C 10 55, 32 55, 40 40 M40 40 C 25 32, 25 10, 40 10 C 55 10, 55 32, 40 40 M40 40 C 25 48, 25 70, 40 70 C 55 70, 55 48, 40 40' fill='none' stroke='%23daa520' stroke-width='1' opacity='0.18'/%3E%3Ccircle cx='40' cy='40' r='12' fill='%23ffefd5' opacity='0.35'/%3E%3Ccircle cx='40' cy='40' r='6' fill='%23daa520' opacity='0.15'/%3E%3Cpath d='M20 20 Q 40 40 20 60 M60 20 Q 40 40 60 60' fill='none' stroke='%23daa520' stroke-width='0.8' opacity='0.15'/%3E%3C/svg%3E"),
+      /* Corner flourishes */
+      url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 Q 20 10 30 30 Q 35 45 25 55 Q 10 45 15 25 Q 18 12 0 0' fill='%23daa520' opacity='0.08'/%3E%3Cpath d='M160 160 Q 140 150 130 130 Q 125 115 135 105 Q 150 115 145 135 Q 142 148 160 160' fill='%23daa520' opacity='0.08'/%3E%3C/svg%3E");
+    background-size: 80px 80px, 160px 160px;
   }
 
   .text-specials-gold {

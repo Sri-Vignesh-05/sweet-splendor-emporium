@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background pattern-kolam">
+    <main className="min-h-screen bg-cream-light pattern-kolam">
       <Header />
       <HeroSection />
       <FeaturesSection />
