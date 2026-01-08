@@ -5,9 +5,9 @@ import TraditionalUnderline from "./TraditionalUnderline";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden bg-cream-light pattern-kolam">
+    <section className="relative min-h-screen lg:min-h-[90vh] flex items-center pt-24 md:pt-32 pb-8 md:pb-16 overflow-hidden bg-cream-light pattern-kolam">
       {/* Grand Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cream-light via-cream-light/95 to-cream-light/50 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-cream-light via-cream-light/95 to-cream-light/50 pointer-events-none" />
       
       {/* Temple-style top border */}
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-gold" />
@@ -24,18 +24,18 @@ const HeroSection = () => {
       <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-crimson/10 rounded-full blur-[80px] hidden lg:block" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left space-y-8 animate-fade-in relative">
+          <div className="text-center lg:text-left space-y-5 md:space-y-8 animate-fade-in relative order-2 lg:order-1">
             {/* Premium Tag with temple styling */}
-            <div className="inline-flex items-center gap-3 bg-crimson/10 border-2 border-crimson/40 rounded-full px-6 py-2.5 shadow-sm backdrop-blur-sm">
-              <span className="w-2.5 h-2.5 rounded-full bg-crimson animate-pulse"></span>
-              <span className="text-sm font-bold text-crimson tracking-wider uppercase">South India's Favourite Since 1988</span>
+            <div className="inline-flex items-center gap-2 md:gap-3 bg-crimson/10 border-2 border-crimson/40 rounded-full px-4 md:px-6 py-2 md:py-2.5 shadow-sm backdrop-blur-sm">
+              <span className="w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-crimson animate-pulse"></span>
+              <span className="text-xs md:text-sm font-bold text-crimson tracking-wider uppercase">South India's Favourite Since 1988</span>
             </div>
 
             {/* Grand Heading with ornate styling */}
-            <div className="space-y-3 relative">
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] text-ornate">
+            <div className="space-y-2 md:space-y-3 relative">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] text-ornate">
                 <span className="block text-royal-blue">Authentic</span>
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gold-dark via-gold to-gold-dark">
                   Sweets &
@@ -44,35 +44,36 @@ const HeroSection = () => {
               </h1>
               
               {/* Traditional Decorative underline */}
-              <TraditionalUnderline size="lg" className="justify-center lg:justify-start pt-4" />
+              <TraditionalUnderline size="md" className="justify-center lg:justify-start pt-2 md:pt-4 lg:hidden" />
+              <TraditionalUnderline size="lg" className="justify-center lg:justify-start pt-4 hidden lg:flex" />
             </div>
 
             {/* Description with refined typography */}
-            <p className="text-lg md:text-xl text-muted-foreground/90 max-w-xl mx-auto lg:mx-0 font-body leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground/90 max-w-xl mx-auto lg:mx-0 font-body leading-relaxed">
               Experience the taste of tradition with our handcrafted sweets and crispy savouries, made fresh daily with pure ingredients.
             </p>
 
-            {/* Grand CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-              <Button variant="premium" className="px-10 py-7 text-lg rounded-xl shadow-crimson transition-all hover:scale-105 text-white relative overflow-hidden group border-2 border-crimson-dark/30">
-                <span className="relative z-10 flex items-center font-bold">
+            {/* Grand CTA Buttons - optimized for mobile CRO */}
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start pt-2 md:pt-4">
+              <Button variant="premium" className="w-full sm:w-auto px-8 md:px-10 py-6 md:py-7 text-base md:text-lg rounded-xl shadow-crimson transition-all hover:scale-105 text-white relative overflow-hidden group border-2 border-crimson-dark/30">
+                <span className="relative z-10 flex items-center justify-center font-bold">
                   Shop Now
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
-              <Button variant="outline" className="border-3 border-royal-blue text-royal-blue hover:bg-royal-blue hover:text-white px-10 py-7 text-lg rounded-xl font-bold transition-all">
+              <Button variant="outline" className="w-full sm:w-auto border-2 border-royal-blue text-royal-blue hover:bg-royal-blue hover:text-white px-8 md:px-10 py-6 md:py-7 text-base md:text-lg rounded-xl font-bold transition-all">
                 View Categories
               </Button>
             </div>
           </div>
 
           {/* Hero Image Section with grand styling */}
-          <div className="relative isolate">
+          <div className="relative isolate order-1 lg:order-2 w-full max-w-sm sm:max-w-md lg:max-w-none mx-auto">
             {/* Main Plate Image with ornate frame */}
-            <div className="relative z-10 mx-auto max-w-[520px] lg:max-w-none">
+            <div className="relative z-10">
               {/* Multiple glow layers for depth */}
-              <div className="absolute inset-0 bg-gold/25 blur-[100px] rounded-full -z-10" />
-              <div className="absolute inset-10 bg-crimson/10 blur-[60px] rounded-full -z-10" />
+              <div className="absolute inset-0 bg-gold/25 blur-[60px] md:blur-[100px] rounded-full -z-10" />
+              <div className="absolute inset-10 bg-crimson/10 blur-[40px] md:blur-[60px] rounded-full -z-10" />
               
               {/* Decorative ring */}
               <div className="absolute -inset-4 border-2 border-gold/20 rounded-full hidden lg:block" />
@@ -84,26 +85,26 @@ const HeroSection = () => {
                 className="w-full h-auto object-contain drop-shadow-2xl"
               />
               
-              {/* Premium Offer Badge */}
-              <div className="absolute top-1/2 -left-6 -translate-y-1/2 bg-gradient-to-br from-crimson to-crimson-dark text-white p-3 sm:p-4 md:p-6 rounded-xl md:rounded-2xl shadow-crimson border-2 border-white/20 animate-float" style={{ animationDelay: "1s" }}>
-                <div className="text-center space-y-0.5 sm:space-y-1">
-                  <p className="text-xl sm:text-2xl md:text-4xl font-bold font-display leading-none">20%</p>
-                  <p className="text-xs sm:text-sm md:text-lg font-semibold">OFF</p>
-                  <p className="text-[10px] sm:text-xs md:text-sm font-medium opacity-90">on first order</p>
-                  <div className="mt-1.5 sm:mt-2 md:mt-3 pt-1.5 sm:pt-2 border-t border-white/20">
-                    <p className="text-[9px] sm:text-[10px] md:text-xs font-bold bg-white/15 py-1 sm:py-1.5 px-2 sm:px-3 rounded-full">FIRST20</p>
+              {/* Premium Offer Badge - repositioned for mobile */}
+              <div className="absolute -bottom-3 left-2 sm:left-4 md:top-1/2 md:-left-6 md:-translate-y-1/2 md:bottom-auto bg-gradient-to-br from-crimson to-crimson-dark text-white p-2.5 sm:p-3 md:p-5 rounded-lg md:rounded-xl shadow-crimson border-2 border-white/20 animate-float z-20" style={{ animationDelay: "1s" }}>
+                <div className="text-center space-y-0.5">
+                  <p className="text-lg sm:text-xl md:text-3xl font-bold font-display leading-none">20%</p>
+                  <p className="text-[10px] sm:text-xs md:text-base font-semibold">OFF</p>
+                  <p className="text-[8px] sm:text-[9px] md:text-xs font-medium opacity-90 hidden sm:block">on first order</p>
+                  <div className="mt-1 sm:mt-1.5 md:mt-2 pt-1 sm:pt-1.5 border-t border-white/20">
+                    <p className="text-[8px] sm:text-[9px] md:text-[11px] font-bold bg-white/15 py-0.5 sm:py-1 px-1.5 sm:px-2 rounded-full">FIRST20</p>
                   </div>
                 </div>
               </div>
 
-              {/* Live Orders Badge */}
-              <div className="absolute bottom-8 sm:bottom-10 md:bottom-12 -right-2 sm:-right-3 md:-right-4 bg-white/95 backdrop-blur-md shadow-elegant py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-6 rounded-full flex items-center gap-1.5 sm:gap-2 md:gap-3 animate-pulse-crimson border-2 border-gold/30">
+              {/* Live Orders Badge - repositioned for mobile */}
+              <div className="absolute -bottom-3 right-2 sm:right-4 md:bottom-12 md:-right-4 bg-white/95 backdrop-blur-md shadow-elegant py-1.5 sm:py-2 md:py-3 px-2.5 sm:px-3 md:px-5 rounded-full flex items-center gap-1.5 sm:gap-2 animate-pulse-crimson border-2 border-gold/30 z-20">
                 <div className="relative">
-                  <span className="w-2 sm:w-2.5 md:w-3.5 h-2 sm:h-2.5 md:h-3.5 bg-green-500 rounded-full block"></span>
-                  <span className="w-2 sm:w-2.5 md:w-3.5 h-2 sm:h-2.5 md:h-3.5 bg-green-500 rounded-full block animate-ping absolute inset-0 opacity-75"></span>
+                  <span className="w-1.5 sm:w-2 md:w-3 h-1.5 sm:h-2 md:h-3 bg-green-500 rounded-full block"></span>
+                  <span className="w-1.5 sm:w-2 md:w-3 h-1.5 sm:h-2 md:h-3 bg-green-500 rounded-full block animate-ping absolute inset-0 opacity-75"></span>
                 </div>
-                <p className="font-semibold text-foreground text-[10px] sm:text-xs md:text-sm">
-                  <span className="font-bold text-sm sm:text-base md:text-xl mr-1 sm:mr-1.5 text-crimson">127</span> ordering now
+                <p className="font-semibold text-foreground text-[9px] sm:text-[10px] md:text-sm whitespace-nowrap">
+                  <span className="font-bold text-xs sm:text-sm md:text-lg mr-0.5 sm:mr-1 text-crimson">127</span> ordering
                 </p>
               </div>
             </div>
@@ -118,4 +119,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
