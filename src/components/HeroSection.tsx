@@ -53,15 +53,15 @@ const HeroSection = () => {
               Experience the taste of tradition with our handcrafted sweets and crispy savouries, made fresh daily with pure ingredients.
             </p>
 
-            {/* Grand CTA Buttons - optimized for mobile CRO */}
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start pt-2 md:pt-4">
-              <Button variant="premium" className="w-full sm:w-auto px-8 md:px-10 py-6 md:py-7 text-base md:text-lg rounded-xl shadow-crimson transition-all hover:scale-105 text-white relative overflow-hidden group border-2 border-crimson-dark/30">
-                <span className="relative z-10 flex items-center justify-center font-bold">
+            {/* CTA Buttons - compact and aligned */}
+            <div className="flex flex-row gap-3 justify-center lg:justify-start pt-2 md:pt-4">
+              <Button variant="premium" className="px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base rounded-lg shadow-crimson transition-all hover:scale-105 text-white relative overflow-hidden group border border-crimson-dark/30">
+                <span className="relative z-10 flex items-center justify-center font-semibold">
                   Shop Now
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
-              <Button variant="outline" className="w-full sm:w-auto border-2 border-royal-blue text-royal-blue hover:bg-royal-blue hover:text-white px-8 md:px-10 py-6 md:py-7 text-base md:text-lg rounded-xl font-bold transition-all">
+              <Button variant="outline" className="border-2 border-royal-blue text-royal-blue hover:bg-royal-blue hover:text-white px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base rounded-lg font-semibold transition-all">
                 View Categories
               </Button>
             </div>
