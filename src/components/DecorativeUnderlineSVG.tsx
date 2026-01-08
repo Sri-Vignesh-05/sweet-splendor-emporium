@@ -5,9 +5,9 @@ interface DecorativeUnderlineSVGProps {
 
 const DecorativeUnderlineSVG = ({ className = "", size = "md" }: DecorativeUnderlineSVGProps) => {
   const sizeClasses = {
-    sm: "w-48 h-4",
-    md: "w-80 h-6",
-    lg: "w-96 h-8",
+    sm: "w-64 h-5",
+    md: "w-[400px] h-7",
+    lg: "w-[500px] h-10",
   };
 
   return (

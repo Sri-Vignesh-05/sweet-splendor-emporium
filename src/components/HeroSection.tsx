@@ -85,25 +85,25 @@ const HeroSection = () => {
               />
               
               {/* Premium Offer Badge */}
-              <div className="absolute top-1/2 -left-6 -translate-y-1/2 bg-gradient-to-br from-crimson to-crimson-dark text-white p-6 rounded-2xl shadow-crimson border-2 border-white/20 animate-float" style={{ animationDelay: "1s" }}>
-                <div className="text-center space-y-1">
-                  <p className="text-4xl font-bold font-display leading-none">20%</p>
-                  <p className="text-lg font-semibold">OFF</p>
-                  <p className="text-sm font-medium opacity-90">on first order</p>
-                  <div className="mt-3 pt-2 border-t border-white/20">
-                    <p className="text-xs font-bold bg-white/15 py-1.5 px-3 rounded-full">FIRST20</p>
+              <div className="absolute top-1/2 -left-6 -translate-y-1/2 bg-gradient-to-br from-crimson to-crimson-dark text-white p-3 sm:p-4 md:p-6 rounded-xl md:rounded-2xl shadow-crimson border-2 border-white/20 animate-float" style={{ animationDelay: "1s" }}>
+                <div className="text-center space-y-0.5 sm:space-y-1">
+                  <p className="text-xl sm:text-2xl md:text-4xl font-bold font-display leading-none">20%</p>
+                  <p className="text-xs sm:text-sm md:text-lg font-semibold">OFF</p>
+                  <p className="text-[10px] sm:text-xs md:text-sm font-medium opacity-90">on first order</p>
+                  <div className="mt-1.5 sm:mt-2 md:mt-3 pt-1.5 sm:pt-2 border-t border-white/20">
+                    <p className="text-[9px] sm:text-[10px] md:text-xs font-bold bg-white/15 py-1 sm:py-1.5 px-2 sm:px-3 rounded-full">FIRST20</p>
                   </div>
                 </div>
               </div>
 
               {/* Live Orders Badge */}
-              <div className="absolute bottom-12 -right-4 bg-white/95 backdrop-blur-md shadow-elegant py-4 px-6 rounded-full flex items-center gap-3 animate-pulse-crimson border-2 border-gold/30">
+              <div className="absolute bottom-8 sm:bottom-10 md:bottom-12 -right-2 sm:-right-3 md:-right-4 bg-white/95 backdrop-blur-md shadow-elegant py-2 sm:py-3 md:py-4 px-3 sm:px-4 md:px-6 rounded-full flex items-center gap-1.5 sm:gap-2 md:gap-3 animate-pulse-crimson border-2 border-gold/30">
                 <div className="relative">
-                  <span className="w-3.5 h-3.5 bg-green-500 rounded-full block"></span>
-                  <span className="w-3.5 h-3.5 bg-green-500 rounded-full block animate-ping absolute inset-0 opacity-75"></span>
+                  <span className="w-2 sm:w-2.5 md:w-3.5 h-2 sm:h-2.5 md:h-3.5 bg-green-500 rounded-full block"></span>
+                  <span className="w-2 sm:w-2.5 md:w-3.5 h-2 sm:h-2.5 md:h-3.5 bg-green-500 rounded-full block animate-ping absolute inset-0 opacity-75"></span>
                 </div>
-                <p className="font-semibold text-foreground text-sm">
-                  <span className="font-bold text-xl mr-1.5 text-crimson">127</span> ordering now
+                <p className="font-semibold text-foreground text-[10px] sm:text-xs md:text-sm">
+                  <span className="font-bold text-sm sm:text-base md:text-xl mr-1 sm:mr-1.5 text-crimson">127</span> ordering now
                 </p>
               </div>
             </div>
