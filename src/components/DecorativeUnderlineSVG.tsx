@@ -14,108 +14,84 @@ const DecorativeUnderlineSVG = ({ className = "", size = "md" }: DecorativeUnder
     <div className={`flex justify-center ${className}`}>
       <svg
         className={sizeClasses[size]}
-        viewBox="0 0 400 30"
+        viewBox="0 0 320 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
+        style={{ background: 'transparent' }}
       >
         <defs>
-          <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#D4A853" stopOpacity="0.3" />
-            <stop offset="25%" stopColor="#C9A227" />
+          <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#C9A227" stopOpacity="0" />
+            <stop offset="15%" stopColor="#C9A227" />
             <stop offset="50%" stopColor="#F4D03F" />
-            <stop offset="75%" stopColor="#C9A227" />
-            <stop offset="100%" stopColor="#D4A853" stopOpacity="0.3" />
+            <stop offset="85%" stopColor="#C9A227" />
+            <stop offset="100%" stopColor="#C9A227" stopOpacity="0" />
           </linearGradient>
-          <linearGradient id="goldGradientCenter" x1="0%" y1="0%" x2="0%" y2="100%">
+          <linearGradient id="goldCenter" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#F4D03F" />
-            <stop offset="50%" stopColor="#C9A227" />
-            <stop offset="100%" stopColor="#8B6914" />
+            <stop offset="100%" stopColor="#B8860B" />
           </linearGradient>
         </defs>
         
-        {/* Left decorative line */}
+        {/* Left line */}
         <path
-          d="M10 15 Q50 15, 80 15"
-          stroke="url(#goldGradient)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M80 15 Q100 10, 120 15"
-          stroke="url(#goldGradient)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M120 15 Q140 20, 160 15"
-          stroke="url(#goldGradient)"
+          d="M20 12 L130 12"
+          stroke="url(#goldLine)"
           strokeWidth="1.5"
           strokeLinecap="round"
         />
         
-        {/* Center ornament - diamond shape */}
+        {/* Left flourish curve */}
         <path
-          d="M175 15 L185 8 L200 15 L185 22 Z"
-          fill="url(#goldGradientCenter)"
-        />
-        <path
-          d="M200 15 L215 8 L225 15 L215 22 Z"
-          fill="url(#goldGradientCenter)"
-        />
-        
-        {/* Center circle */}
-        <circle cx="200" cy="15" r="4" fill="url(#goldGradientCenter)" />
-        <circle cx="200" cy="15" r="2" fill="#F4D03F" />
-        
-        {/* Small decorative dots */}
-        <circle cx="165" cy="15" r="2" fill="#C9A227" />
-        <circle cx="235" cy="15" r="2" fill="#C9A227" />
-        
-        {/* Right decorative line (mirror of left) */}
-        <path
-          d="M240 15 Q260 20, 280 15"
-          stroke="url(#goldGradient)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M280 15 Q300 10, 320 15"
-          stroke="url(#goldGradient)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        <path
-          d="M320 15 Q350 15, 390 15"
-          stroke="url(#goldGradient)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-        
-        {/* Additional flourishes */}
-        <path
-          d="M150 12 Q160 8, 165 12"
+          d="M125 12 Q135 6, 145 12"
           stroke="#C9A227"
-          strokeWidth="1"
+          strokeWidth="1.2"
           fill="none"
         />
+        
+        {/* Center diamond left */}
         <path
-          d="M150 18 Q160 22, 165 18"
+          d="M145 12 L152 7 L160 12 L152 17 Z"
+          fill="url(#goldCenter)"
+        />
+        
+        {/* Center diamond right */}
+        <path
+          d="M160 12 L168 7 L175 12 L168 17 Z"
+          fill="url(#goldCenter)"
+        />
+        
+        {/* Center dot as path */}
+        <path
+          d="M160 12 m-2.5,0 a2.5,2.5 0 1,0 5,0 a2.5,2.5 0 1,0 -5,0"
+          fill="#F4D03F"
+        />
+        
+        {/* Right flourish curve */}
+        <path
+          d="M175 12 Q185 18, 195 12"
           stroke="#C9A227"
-          strokeWidth="1"
+          strokeWidth="1.2"
           fill="none"
         />
+        
+        {/* Right line */}
         <path
-          d="M235 12 Q240 8, 250 12"
-          stroke="#C9A227"
-          strokeWidth="1"
-          fill="none"
+          d="M190 12 L300 12"
+          stroke="url(#goldLine)"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        
+        {/* Small accent dots as paths */}
+        <path
+          d="M140 12 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0"
+          fill="#C9A227"
         />
         <path
-          d="M235 18 Q240 22, 250 18"
-          stroke="#C9A227"
-          strokeWidth="1"
-          fill="none"
+          d="M180 12 m-1.5,0 a1.5,1.5 0 1,0 3,0 a1.5,1.5 0 1,0 -3,0"
+          fill="#C9A227"
         />
       </svg>
     </div>
